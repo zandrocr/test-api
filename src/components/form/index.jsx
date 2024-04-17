@@ -11,7 +11,7 @@ export function Form() {
       setTimeout(() => {
         setResponse(false);
         setUsername("");
-        setPassword("");
+        setPassword("");l
       }, 2000);
     }
   }, [response]);

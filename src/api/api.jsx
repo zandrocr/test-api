@@ -9,7 +9,7 @@ export async function Get(array, notServer) {
     .get("/users")
     .then((response) => array(response.data), notServer(true))
     .catch((err) => {
-      notServer(err.code == "ERR_NETWORK" || false);
+      notServer(false);
     });
 }
 
