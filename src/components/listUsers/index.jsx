@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Del, Get } from "../../api/api";
 
-export function ListUser() {
+export function ListUser(state) {
   const [array, setArray] = useState([]);
   const [notServer, setNotServer] = useState(false);
   const [response, setResponse] = useState(false);
@@ -9,7 +9,7 @@ export function ListUser() {
   useEffect(() => {
     Get(setArray, setNotServer);
     setResponse(false);
-  }, [response]);
+  }, [response, state]);
 
   function Delete(id) {
     Del(id, setResponse);

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Post } from "../../api/api";
 
-export function Form() {
+export function Form({state}) {
   const [username, setUsername] = useState("tz6v@live.com");
   const [password, setPassword] = useState("gasdgatet");
   const [response, setResponse] = useState(false);
@@ -11,8 +11,9 @@ export function Form() {
       setTimeout(() => {
         setResponse(false);
         setUsername("");
-        setPassword("");l
-      }, 2000);
+        setPassword("");
+        state(true)
+      }, 1000);
     }
   }, [response]);
 
